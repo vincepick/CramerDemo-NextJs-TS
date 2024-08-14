@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import schema from "../schema";
-import prisma from "@/prisma/client";
+import schema from "../../auth/schema";
+import { prisma } from "@/prisma/client";
 
 interface Props {
-  params: { id: number };
+  params: { id: string };
 }
 
 export async function GET(
@@ -11,7 +11,7 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   const user = await prisma.user.findUnique({
-    where: { id: parseInt(params.id) },
+    where: { id: params.id },
   });
   //fetch data from a db
   //if not found return a 404 error
@@ -33,7 +33,7 @@ export async function PUT(
     return NextResponse.json(validation.error.errors, { status: 400 });
 
   const user = await prisma.user.findUnique({
-    where: { id: parseInt(params.id) },
+    where: { id: params.id },
   });
 
   if (!user)
@@ -46,6 +46,7 @@ export async function PUT(
       email: body.email,
     },
   });
+
   return NextResponse.json(updatedUser);
 }
 
@@ -54,7 +55,7 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   const user = await prisma.user.findUnique({
-    where: { id: parseInt(params.id) },
+    where: { id: params.id },
   });
 
   if (!user) {
