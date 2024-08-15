@@ -1,11 +1,13 @@
 "use client";
 
+import "./UserDelete.css";
 import React, { useEffect, useState } from "react";
 import { isTemplateLiteralTypeNode } from "typescript";
 import { useRouter } from "next/navigation";
 
 interface User {
   id: string;
+  name: string;
   email: string;
 }
 
@@ -36,7 +38,7 @@ const UserDelete = () => {
     <ul>
       {users.map((user) => (
         <li key={user.id}>
-          {user.email}, {user.id}
+          {user.name},{user.email}, {user.id}
           <button className="ml-2" onClick={() => deleteUser(user.id)}>
             Delete
           </button>
