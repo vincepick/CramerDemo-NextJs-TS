@@ -1,0 +1,65 @@
+/* src/Carousel.css */
+.carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    color: transparent; /* Make original arrow text invisible */
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    width: 2rem; /* Smaller width */
+    height: 2rem; /* Smaller height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: color 0.3s;
+  }
+  
+  .carousel__btn::before {
+    content: '';
+    display: block;
+    width: 0.5rem; /* Size of the arrow */
+    height: 0.5rem; /* Size of the arrow */
+    border-top: 2px solid white; /* Arrow thickness and color */
+    border-right: 2px solid white; /* Arrow thickness and color */
+  }
+  
+  .carousel__btn--prev::before {
+    transform: rotate(-135deg); /* Arrow pointing left */
+  }
+  
+  .carousel__btn--next::before {
+    transform: rotate(45deg); /* Arrow pointing right */
+  }
+  
+  .carousel__btn:hover::before {
+    border-color: rgba(255, 255, 255, 0.8); /* Change arrow color on hover */
+  }
+  
+  .carousel__btn--prev {
+    left: 10px; /* Adjust as needed to move the button inside the image */
+  }
+  
+  .carousel__btn--next {
+    right: 10px; /* Adjust as needed to move the button inside the image */
+  }
+  
+  .carousel__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* .carousel__img:hover {
+    transform: scale();
+  } */
+  
