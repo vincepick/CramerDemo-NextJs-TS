@@ -1,9 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import NavBar from "./NavBar";
+import { Navbar } from "./components";
 import React, { Suspense } from "react";
 import AuthProvider from "./auth/Provider";
+
+// Content which is displayed on every page
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,11 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="winter">
+    <html lang="en">
       <body className={inter.className}>
         <AuthProvider>
-          <NavBar />
-          <main className="p-5">
+          <Navbar />
+          <main className="p">
             <Suspense fallback={<p>Loading...</p>}>{children}</Suspense>
           </main>
         </AuthProvider>

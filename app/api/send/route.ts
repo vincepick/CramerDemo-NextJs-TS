@@ -6,16 +6,20 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST() {
   try {
-    const response = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
-      to: ["vincepick@gmail.com"],
+    const { data, error } = await resend.emails.send({
+      from: 'Acme <onboarding@resend.dev>',
+      to: ['vincepick@gmail.com'],
       subject: "Hello world",
-      react: EmailTemplate({ firstName: "squigdame" }) as React.ReactElement,
+      react: EmailTemplate({ firstName: "John" }) as React.ReactElement,
     });
 
-    return Response.json(response);
+    if (error) {
+      return Response.json({ error }, { status: 500 });
+    }
+
+    return Response.json({ data });
   } catch (error) {
-    return Response.json({ error }, { status: 600 });
+    return Response.json({ error }, { status: 500 });
   }
 }
 

@@ -1,6 +1,9 @@
 import React, { Suspense } from "react";
 import UserTable from "./UserTable";
 import Link from "next/link";
+import UserDelete from "../components/UserDelete/UserDelete";
+import UserCreate from "../components/UserCreate/UserCreate";
+import LoginButton from "../components/LoginButton/LoginButton";
 
 interface Props {
   searchParams: { sortOrder: string };
@@ -8,15 +11,18 @@ interface Props {
 
 const UsersPage = async ({ searchParams: { sortOrder } }: Props) => {
   return (
-    <>
-      <h1>Users</h1>
-      <Link href="/users/new" className="btn">
+    <div className="gradient__bg">
+      {/* <h1>User Management Table</h1> */}
+      {/* <Link href="/users/new" className="btn">
         New User
-      </Link>
+      </Link> */}
       <Suspense fallback={<p>Loading...</p>}>
-        <UserTable sortOrder={sortOrder} />
+        {/* <UserTable sortOrder={sortOrder} /> */}
+        <UserDelete />
+        <UserCreate />
       </Suspense>
-    </>
+      {/* <UserDelete /> */}
+    </div>
   );
 };
 

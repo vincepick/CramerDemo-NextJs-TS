@@ -1,5 +1,5 @@
 {
-  "name": "next-app",
+  "name": "OutNAbout Sample",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -29,6 +29,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-email": "2.1.6",
+    "react-icons": "^5.3.0",
     "resend": "^1.1.0",
     "tailwindcss": "3.4.8",
     "typescript": "5.5.4",
