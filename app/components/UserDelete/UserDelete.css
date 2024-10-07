@@ -1,0 +1,91 @@
+.user-delete-container {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  /* Other styles */
+}
+
+@media (max-width: 600px) {
+  .user-delete-container {
+    margin-top: 10px; /* Less space on smaller screens */
+  }
+}
+
+
+.gradient-text {
+  background: linear-gradient(90deg, #e66465, #9198e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* Optional: Additional styling for the h2 element */
+h2.gradient-text {
+  margin-top: 35px;
+  font-size: 2em; /* Adjust the font size as needed */
+  margin-bottom: 15px; /* Adjust spacing as needed */
+}
+
+ul.user-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+li.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li.user-item:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.user-email {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.user-id {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.delete-button {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: #FF4820;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}

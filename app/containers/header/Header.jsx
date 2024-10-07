@@ -33,11 +33,11 @@ const Header = () => {
       </div>
       
       
-      <div className="cramer__header-image">
+      {/* <div className="cramer__header-image"> */}
         {/* <h1 className="gradient__text">This is the react carousel</h1> */}
         {/* <Carousel images={images}/> */}
         {/* <img src={ai} alt="Artificial Intelligence" /> */}
-      </div>
+      {/* </div> */}
     </div>
   );
 };

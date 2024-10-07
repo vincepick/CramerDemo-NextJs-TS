@@ -1,12 +1,26 @@
+h1 { 
+  color: #94a3b8
+}
+
+/* New parent container */
+.navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed; /* Stays at the top of the page */
+    top: 0;
+    left: 0;
+    z-index: 100; /* Ensure it stays on top */
+    padding: 1rem 0; /* Optional: adjust padding */
+}
+
 .cramer__navbar {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-      position: absolute;
-
-    /* first: top and bottom  then left and right */
-    padding: 2rem 6rem;
-    z-index: 100; /* Ensure it stays on top */
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; /* Controls the width of the navbar */
+    max-width: 1200px; /* Optional: maximum width */
+    padding: 0; /* Remove previous padding */
 }
 
 .cramer__navbar-links {
@@ -30,7 +44,6 @@
     flex-direction: row;
 }
 
-/* For sign in button */
 .cramer__navbar-sign {
     display: flex;
     justify-content: flex-end;
@@ -39,20 +52,19 @@
 
 .cramer__navbar-links_container p,
 .cramer__navbar-sign p,
-.cramer__navbar-menu_container p{
+.cramer__navbar-menu_container p {
     color: #fff;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 18px;
     line-height: 25px;
     text-transform: capitalize;
-
-    margin: 0 1rem; 
-    cursor: pointer; 
+    margin: 0 1rem;
+    cursor: pointer;
 }
 
 .cramer__navbar-sign button,
-.cramer__navbar-menu_container button{
+.cramer__navbar-menu_container button {
     padding: 0.5rem 1rem;
     color: #fff;
     background: #FF4820;
@@ -68,22 +80,20 @@
 
 .cramer__navbar-menu {
     margin-left: 1rem;
-    
     display: none;
     position: relative;
-  }
-  
-  .cramer__navbar-menu svg {
-    cursor: pointer; 
-  }
-  
-  .cramer__navbar-menu_container {
+}
+
+.cramer__navbar-menu svg {
+    cursor: pointer;
+}
+
+.cramer__navbar-menu_container {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
-  
-    text-align: end; 
+    text-align: end;
     background: var(--color-footer);
     padding: 2rem;
     position: absolute;
@@ -91,48 +101,47 @@
     right: 0;
     margin-top: 1rem;
     min-width: 210px;
-    border-radius: 5px; 
-    box-shadow: 0 0 5 rgba(0,0,0,0.2);
-  }
+    border-radius: 5px;
+    box-shadow: 0 0 5 rgba(0, 0, 0, 0.2);
+}
 
-  .cramer__navbar-menu_container p{
+.cramer__navbar-menu_container p {
     margin: 1rem 0;
-  }
+}
 
-  .cramer__navbar-menu_container-links-sign {
+.cramer__navbar-menu_container-links-sign {
     display: none;
-  }
+}
 
-/* for formatting for different devices */
-  @media screen and (max-width: 1050px){
+@media screen and (max-width: 1050px) {
     .cramer__navbar-links_container {
         display: none;
     }
     .cramer__navbar-menu {
         display: flex;
     }
-  }
+}
 
-  @media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
     .cramer__navbar {
         padding: 2rem 4rem;
     }
-  }
+}
 
-  @media screen and (max-width: 550px){
+@media screen and (max-width: 550px) {
     .cramer__navbar {
         padding: 2rem;
     }
 
     .cramer__navbar-sign {
-        display: none
+        display: none;
     }
 
     .cramer__navbar-menu_container {
-        top: 20px; 
+        top: 20px;
     }
 
     .cramer__navbar-menu_container-links-sign {
         display: block;
     }
-  }
+}

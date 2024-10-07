@@ -4,24 +4,15 @@ import { useSession } from "next-auth/react";
 import React from "react";
 import Link from "next/link";
 
-const NavBar = () => {
+const LoginButton = () => {
   const { status, data: session } = useSession();
 
   return (
-    <div className="flex space-x-3">
-      <Link href="/" className="mr-5 gradient__text">
-        Cramer Fish Sciences
-      </Link>
-      <Link href="/" className="gradient__text">
-        Home
-      </Link>
-      <Link href="/users" className="gradient__text">
-        User Management
-      </Link>
+    <div className="flex space-x-3 items-center">
       {status === "loading" && <div className="gradient__text">Loading...</div>}
       {status === "authenticated" && (
-        <div>
-          <span className="gradient__text">{session.user!.name}</span>
+        <div className="flex items-center space-x-3">
+          <h1 className="text-white">Hi {session.user!.name}</h1>
           <Link href="/api/auth/signout">
             <button className="cramer__navbar-sign">Sign Out</button>
           </Link>
@@ -36,4 +27,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default LoginButton;

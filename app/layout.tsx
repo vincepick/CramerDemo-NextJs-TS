@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import NavBar from "./NavBar";
+import { Navbar } from "./components";
 import React, { Suspense } from "react";
 import AuthProvider from "./auth/Provider";
 
@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <AuthProvider>
-          <NavBar />
+          <Navbar />
           <main className="p">
             <Suspense fallback={<p>Loading...</p>}>{children}</Suspense>
           </main>

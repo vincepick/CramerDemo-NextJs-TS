@@ -15,7 +15,7 @@ const Footer = () => (
 
     <div className="cramer__footer-links">
       <div className="cramer__footer-links_logo">
-        <img src={cramerLogo} alt="cramer_logo" />
+        {/* <img src={cramerLogo} alt="cramer_logo" /> */}
         <p>7525 NE Ambassador Pl., Suite C
         Portland, OR 97220 <br /> All Rights Reserved</p>
       </div>
