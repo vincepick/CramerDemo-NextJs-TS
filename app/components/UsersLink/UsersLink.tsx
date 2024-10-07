@@ -11,11 +11,11 @@ const UsersLink = () => {
     <div className="flex space-x-3 items-center">
       {status === "loading" && <div className="gradient__text">Loading...</div>}
       {status === "authenticated" && (
-        <div className="flex items-center space-x-3">
-          <Link href="/users">
-            <button className="cramer__navbar-sign">Users</button>
-          </Link>
-        </div>
+        <Link href="/users">
+          <button className="cramer__navbar-sign ml-4">Users</button>
+          {"    "}
+          {/* to add a margin to the left */}
+        </Link>
       )}
     </div>
   );
